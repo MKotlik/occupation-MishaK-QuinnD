@@ -18,6 +18,7 @@ def reader():
 	joblist.pop(-1)
 
 	#turn each entry into a seperate list, remove " characters, convert the numbers to floats
+	jobs = []
 	for x in joblist:
 		if x[0] == '"':
 			x = x[1:len(x)]
@@ -25,19 +26,28 @@ def reader():
 		else:
 			x = x.split(',')
 		x[1] = float(x[1])
+		jobs += [x]
 
-	return joblist #returns the list of lists
+	#return the list of lists
+	return jobs 
+
+# Dictionary creater function
+def librarian(givenlist):
+	occupations = {}
+	for x in givenlist:
+		occupations[x[0]] = x[1]
+	return occupations
 
 # Storage function
-#def storer(list):
+def storer(givenlist):
 
+	return
 
-#	return
 # Choosing function
-#def chooser(storage):
+def chooser(storage):
 
+	return
 
-
-#	return
 # Runtime
-print reader()
+z = reader()
+print librarian(z)
